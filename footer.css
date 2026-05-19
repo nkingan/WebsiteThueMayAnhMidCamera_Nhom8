@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700&display=swap');
+
+:root {
+    --bg-dark: #121212;
+    --bg-pure-black: #000000;
+    --color-accent: #FFB703;
+    --text-light: #FFFFFF;
+    --text-muted: #A0A0A5;
+    --font-title: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --radius-sm: 4px;
+}
+
+/* Reset cơ bản cho Footer độc lập */
+.main-footer *, .main-footer *::before, .main-footer *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.main-footer {
+    font-family: var(--font-body);
+    background-color: var(--bg-dark);
+    color: var(--text-muted);
+    padding: 60px 0 0 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1.5fr 2fr; /* Chia 4 cột cân xứng */
+    gap: 40px;
+    padding: 0 20px 40px 20px;
+}
+
+.footer-column h4 {
+    font-family: var(--font-title);
+    color: var(--text-light);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Tiêu đề cột 1 dạng Logo */
+.brand-info h3 {
+    font-family: var(--font-title);
+    color: var(--text-light);
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+.brand-info h3 span {
+    color: var(--color-accent);
+}
+.brand-info p {
+    margin-bottom: 20px;
+}
+
+/* Định dạng danh sách link */
+.footer-column ul {
+    list-style: none;
+}
+.footer-column ul li {
+    margin-bottom: 12px;
+}
+.footer-column a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.footer-column a:hover {
+    color: var(--color-accent);
+}
+
+/* Icon thông tin liên hệ */
+.contact-info p {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.contact-info i {
+    color: var(--color-accent);
+    width: 16px;
+}
+
+/* Icon mạng xã hội cột 1 */
+.social-icons {
+    display: flex;
+    gap: 12px;
+}
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: #1E1E1F;
+    color: var(--text-light);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+.social-icons a:hover {
+    background-color: var(--color-accent);
+    color: var(--bg-pure-black);
+    transform: translateY(-3px);
+}
+
+/* Thanh Copyright dưới cùng */
+.footer-bottom {
+    background-color: var(--bg-pure-black);
+    padding: 20px 0;
+    border-top: 1px solid #222;
+    font-size: 0.8rem;
+    text-align: center;
+}
+.footer-bottom-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}

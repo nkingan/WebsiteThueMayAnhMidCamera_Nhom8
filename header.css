@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700;800&display=swap');
 
 :root {
-    --bg-white: #FFFFFF;
-    --bg-light: #F5F5F7;
-    --bg-pure-black: #000000;
-    --color-accent: #FFB703;
-    --text-main: #1D1D1F;
-    --text-muted: #6E6E73;
+    /* --- BẢNG MÀU CHỦ ĐẠO CHO NỀN XÁM (GRAY TECH THEME) --- */
+    --bg-header-gray: #2A2A2C;     /* Đổ màu xám chủ đạo cho toàn bộ thanh Header */
+    --bg-search-box: #1E1E1F;      /* Màu xám tối hơn một chút cho ô tìm kiếm để tạo chiều sâu */
+    
+    --text-light-pure: #FFFFFF;    /* Chữ màu trắng tinh khôi cho các mục nổi bật, Logo */
+    --text-light-gray: #CCCCCC;    /* Chữ màu xám sáng cho các mục menu thông thường */
+    --text-muted: #8E8E93;         /* Màu xám mờ cho các ký tự gợi ý (placeholder) */
+    
     --font-title: 'Montserrat', sans-serif;
     --font-body: 'Inter', sans-serif;
     --radius-md: 8px;
@@ -22,8 +24,8 @@
 
 .main-header {
     font-family: var(--font-body);
-    background-color: var(--bg-white);
-    border-bottom: 1px solid #E5E5E5;
+    background-color: var(--bg-header-gray); /* Đổ màu xám cho nền */
+    border-bottom: 1px solid #1A1A1A;        /* Viền dưới tối màu tạo độ sắc nét */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -39,17 +41,17 @@
     padding: 0 20px;
 }
 
-/* Style Logo */
+/* Style Logo (Chữ MID màu trắng, chữ CAMERA màu xám sáng) */
 .logo a {
     font-family: var(--font-title);
     font-size: 1.6rem;
     font-weight: 800;
-    color: var(--bg-pure-black);
+    color: var(--text-light-pure);
     text-decoration: none;
     letter-spacing: -0.03em;
 }
 .logo a span {
-    color: var(--color-accent);
+    color: var(--text-light-gray); 
 }
 
 /* Style Menu điều hướng */
@@ -62,12 +64,17 @@
     font-family: var(--font-title);
     font-size: 0.95rem;
     font-weight: 600;
-    color: var(--text-main);
+    color: var(--text-light-gray); /* Mặc định chữ màu xám sáng */
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
 }
+
+/* Khi di chuột hoặc mục đang active: Chữ sáng bừng lên màu trắng và có gạch chân trắng */
 .nav-menu a:hover, .nav-menu a.active {
-    color: var(--color-accent);
+    color: var(--text-light-pure);
+    border-bottom-color: var(--text-light-pure); 
 }
 
 /* Khu vực chức năng (Search + Icons) */
@@ -77,10 +84,10 @@
     gap: 20px;
 }
 
-/* Thanh tìm kiếm tinh tế */
+/* Thanh tìm kiếm màu xám chìm (Dark Gray) */
 .search-box {
     display: flex;
-    background-color: var(--bg-light);
+    background-color: var(--bg-search-box);
     border-radius: var(--radius-md);
     padding: 6px 12px;
     align-items: center;
@@ -88,7 +95,7 @@
     transition: border-color 0.3s ease;
 }
 .search-box:focus-within {
-    border-color: var(--bg-pure-black);
+    border-color: var(--text-light-gray); /* Bấm vào thì viền sáng lên */
 }
 .search-box input {
     border: none;
@@ -97,34 +104,40 @@
     padding-right: 10px;
     font-size: 0.85rem;
     width: 180px;
+    color: var(--text-light-pure); /* Chữ gõ vào màu trắng */
+}
+/* Đổi màu chữ gợi ý trong ô input */
+.search-box input::placeholder {
+    color: var(--text-muted);
 }
 .search-box button {
     border: none;
     background: none;
     cursor: pointer;
-    color: var(--text-muted);
+    color: var(--text-light-gray);
 }
 
 /* Icon Giỏ hàng & User */
 .action-icon {
-    color: var(--bg-pure-black);
+    color: var(--text-light-gray);
     font-size: 1.2rem;
     position: relative;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 .action-icon:hover {
-    color: var(--color-accent);
+    color: var(--text-light-pure); /* Di chuột vào icon sáng lên màu trắng */
 }
+
+/* Chấm tròn số lượng giỏ hàng nền trắng chữ đen nổi bật trên nền xám */
 .cart-count {
     position: absolute;
     top: -8px;
     right: -10px;
-    background-color: var(--bg-pure-black);
-    color: var(--bg-white);
+    background-color: var(--text-light-pure);
+    color: var(--bg-header-gray);
     font-size: 0.7rem;
     font-weight: bold;
     padding: 2px 6px;
     border-radius: 50%;
-    border: 1px solid var(--bg-white);
 }

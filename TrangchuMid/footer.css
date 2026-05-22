@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700&display=swap');
+
+:root {
+    /* --- BẢNG MÀU MỚI ĐỒNG BỘ CHO FOOTER --- */
+    --bg-footer-dark: #1C1C1E;     /* Nền chính của Footer: Màu xám đen siêu sâu */
+    --bg-footer-bottom: #121212;   /* Nền thanh copyright dưới cùng: Đen huyền bí */
+    --bg-social-btn: #2A2A2C;      /* Nền nút mạng xã hội (Trùng khít với màu nền Header) */
+    
+    --text-light-pure: #FFFFFF;    /* Chữ tiêu đề màu trắng tinh */
+    --text-light-muted: #A0A0A5;   /* Chữ nội dung màu xám sáng, dễ đọc không mỏi mắt */
+    --color-accent-gray: #CCCCCC;  /* Màu xám sáng khi di chuột (hover) vào link */
+    
+    --font-title: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --radius-sm: 4px;
+}
+
+/* Reset cơ bản cho Footer độc lập */
+.main-footer *, .main-footer *::before, .main-footer *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.main-footer {
+    font-family: var(--font-body);
+    background-color: var(--bg-footer-dark);
+    color: var(--text-light-muted);
+    padding: 60px 0 0 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    border-top: 1px solid #2A2A2C; /* Đường viền trên để phân cách nhẹ nhàng với body */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1.5fr 2fr; /* Chia thanh 4 cột đều đặn */
+    gap: 40px;
+    padding: 0 20px 40px 20px;
+}
+
+/* Định dạng tiêu đề các cột */
+.footer-column h4 {
+    font-family: var(--font-title);
+    color: var(--text-light-pure);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Style cột Logo Brand tên nhóm */
+.brand-info h3 {
+    font-family: var(--font-title);
+    color: var(--text-light-pure);
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: -0.03em;
+}
+/* Chữ CAMERA ở logo chuyển sang màu xám sáng nhẹ */
+.brand-info h3 span {
+    color: var(--color-accent-gray);
+}
+.brand-info p {
+    margin-bottom: 20px;
+}
+
+/* Định dạng danh sách link điều hướng */
+.footer-column ul {
+    list-style: none;
+}
+.footer-column ul li {
+    margin-bottom: 12px;
+}
+.footer-column a {
+    color: var(--text-light-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+/* Khi di chuột vào các link: Chữ sẽ sáng lên màu trắng tinh */
+.footer-column a:hover {
+    color: var(--text-light-pure);
+}
+
+/* Khối thông tin liên hệ trực tiếp */
+.contact-info p {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/* Màu các icon thông tin liên hệ chuyển sang màu trắng tinh khôi */
+.contact-info i {
+    color: var(--text-light-pure);
+    width: 16px;
+}
+
+/* Các nút tròn Mạng xã hội của nhóm */
+.social-icons {
+    display: flex;
+    gap: 12px;
+}
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background-color: var(--bg-social-btn); /* Đổ màu xám tinh tế */
+    color: var(--text-light-pure);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+/* Khi hover nút mạng xã hội: Nền hóa trắng tinh, icon đổi sang màu xám tối */
+.social-icons a:hover {
+    background-color: var(--text-light-pure);
+    color: var(--bg-footer-dark);
+    transform: translateY(-3px);
+}
+
+/* Thanh Bản quyền Copyright dưới đáy */
+.footer-bottom {
+    background-color: var(--bg-footer-bottom);
+    padding: 20px 0;
+    border-top: 1px solid #252526;
+    font-size: 0.8rem;
+    text-align: center;
+}
+.footer-bottom-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}

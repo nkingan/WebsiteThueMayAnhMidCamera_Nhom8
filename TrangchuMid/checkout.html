@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Thuê & Thanh Toán - MidCamera</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="#">MID<span>CAMERA</span></a>
+            </div>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#" class="active">Trang chủ</a></li>
+                    <li><a href="#">Máy ảnh</a></li>
+                    <li><a href="#">Ống kính</a></li>
+                    <li><a href="#">Phụ kiện</a></li>
+                    <li><a href="#">Bảng giá</a></li>
+                    <li><a href="#">Chính sách</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="Tìm máy ảnh, ống kính...">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                
+                <a href="checkout.html" class="action-icon" title="Giỏ hàng">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                
+                <a href="#" class="action-icon" title="Tài khoản">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="checkout-page">
+        <div class="checkout-container">
+            
+            <div class="checkout-left">
+                
+                <section class="checkout-section">
+                    <h2 class="block-title">1. Thời Gian Thuê Thiết Bị</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="rent-date">Ngày nhận máy *</label>
+                            <input type="date" id="rent-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="return-date">Ngày trả máy *</label>
+                            <input type="date" id="return-date" required>
+                        </div>
+                    </div>
+                    <p class="section-hint">💡 Hệ thống tự động tính tiền dựa trên số ngày giữa 2 mốc này.</p>
+                </section>
+
+                <section class="checkout-section">
+                    <h2 class="block-title">2. Hình Thức Giao Nhận</h2>
+                    <div class="delivery-methods">
+                        <label class="delivery-card active">
+                            <input type="radio" name="delivery" value="store" checked>
+                            <div class="delivery-info">
+                                <strong>Nhận tại cửa hàng (Miễn phí)</strong>
+                                <p>Hỗ trợ test máy kĩ thuật trực tiếp tại chi nhánh MidCamera.</p>
+                            </div>
+                        </label>
+
+                        <label class="delivery-card">
+                            <input type="radio" name="delivery" value="home">
+                            <div class="delivery-info">
+                                <strong>Giao hàng tận nơi (Có phí ship)</strong>
+                                <p>Ship nội thành siêu tốc, giao nhận tận tay kèm biên bản.</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="customer-info-fields" style="margin-top: 20px;">
+                        <div class="form-group">
+                            <label for="fullname">Họ và tên người thuê *</label>
+                            <input type="text" id="fullname" placeholder="Nguyễn Văn A" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Số điện thoại *</label>
+                                <input type="tel" id="phone" placeholder="0901234567" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email nhận hóa đơn</label>
+                                <input type="email" id="email" placeholder="name@example.com">
+                            </div>
+                        </div>
+                        <div class="form-group delivery-address-group">
+                            <label for="address">Địa chỉ giao hàng * <small>(Bỏ trống nếu nhận tại cửa hàng)</small></label>
+                            <input type="text" id="address" placeholder="Số nhà, tên đường, phường/xã, quận/huyện...">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="checkout-section">
+                    <h2 class="block-title">3. Dịch Vụ / Thiết Bị Bổ Sung</h2>
+                    <div class="services-list">
+                        <label class="service-item">
+                            <input type="checkbox" name="services" value="insurance">
+                            <span class="custom-checkbox"></span>
+                            <div class="service-details">
+                                <strong>Gói bảo hiểm thiết bị (An tâm thuê)</strong>
+                                <p>Giảm 80% giá trị đền bù nếu xảy ra sự cố va đập, trầy xước không mong muốn.</p>
+                            </div>
+                            <span class="service-price">+50.000đ /ngày</span>
+                        </label>
+
+                        <label class="service-item">
+                            <input type="checkbox" name="services" value="card-128gb">
+                            <span class="custom-checkbox"></span>
+                            <div class="service-details">
+                                <strong>Nâng cấp thẻ nhớ SanDisk 128GB Tốc độ cao</strong>
+                                <p>Mặc định sẵn có thẻ 64GB. Nâng cấp lên 128GB để quay video 4K thoải mái.</p>
+                            </div>
+                            <span class="service-price">+30.000đ /ngày</span>
+                        </label>
+
+                        <label class="service-item">
+                            <input type="checkbox" name="services" value="tripod">
+                            <span class="custom-checkbox"></span>
+                            <div class="service-details">
+                                <strong>Thuê thêm chân máy (Tripod Benro) chuyên nghiệp</strong>
+                                <p>Phù hợp cho nhu cầu phơi sáng, quay phim cố định hoặc chụp phong cảnh.</p>
+                            </div>
+                            <span class="service-price">+40.000đ /ngày</span>
+                        </label>
+                    </div>
+                </section>
+
+                <section class="checkout-section">
+                    <h2 class="block-title">4. Phương Thức Thanh Toán</h2>
+                    <div class="payment-methods">
+                        <label class="payment-card active">
+                            <input type="radio" name="payment" value="qr" checked>
+                            <div class="payment-info">
+                                <strong>Chuyển khoản VietQR Hoả Tốc (Khuyên dùng)</strong>
+                                <p>Tự động tạo mã QR kèm số tiền, quét là duyệt đơn lập tức.</p>
+                            </div>
+                        </label>
+                        <label class="payment-card">
+                            <input type="radio" name="payment" value="cod">
+                            <div class="payment-info">
+                                <strong>Thanh toán trực tiếp khi nhận máy</strong>
+                                <p>Đặt cọc trước 10% giữ máy, phần còn lại thanh toán khi nhận thiết bị.</p>
+                            </div>
+                        </label>
+                    </div>
+                </section>
+
+            </div>
+
+            <div class="checkout-right">
+                <h2 class="block-title">Đơn Hàng Của Bạn (02 items)</h2>
+                
+                <div class="cart-summary-list">
+                    <div class="cart-item">
+                        <div class="item-img"><img src="images/prod-sony.jpg" alt="Sony A7 IV"></div>
+                        <div class="item-details">
+                            <h3>Sony Alpha A7 IV (Body)</h3>
+                            <p class="item-meta">Số lượng: 1 | Thời gian: 3 ngày</p>
+                            <span class="item-price">450.000đ <small>/ngày</small></span>
+                        </div>
+                    </div>
+                    <div class="cart-item">
+                        <div class="item-img"><img src="images/prod-lens.jpg" alt="Lens 24-70"></div>
+                        <div class="item-details">
+                            <h3>Sony FE 24-70mm f/2.8 GM II</h3>
+                            <p class="item-meta">Số lượng: 1 | Thời gian: 3 ngày</p>
+                            <span class="item-price">350.000đ <small>/ngày</small></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="coupon-section">
+                    <label for="coupon-code">Mã giảm giá / Ưu đãi</label>
+                    <div class="coupon-input-group">
+                        <input type="text" id="coupon-code" placeholder="Ví dụ: MIDCAMNEW">
+                        <button type="button" class="btn-apply-coupon">Áp dụng</button>
+                    </div>
+                </div>
+
+                <div class="price-calculations">
+                    <div class="calc-row">
+                        <span>Giá thuê thiết bị gốc (3 ngày):</span>
+                        <span>2.400.000đ</span>
+                    </div>
+                    <div class="calc-row">
+                        <span>Dịch vụ/Thiết bị thêm chọn thêm:</span>
+                        <span class="added-service-price">+0đ</span>
+                    </div>
+                    <div class="calc-row">
+                        <span>Phí giao hàng tận nơi:</span>
+                        <span>Miễn phí</span>
+                    </div>
+                    <div class="calc-row discount-row">
+                        <span>Mã giảm giá áp dụng:</span>
+                        <span class="discount-value">-0đ</span>
+                    </div>
+                    <hr>
+                    <div class="calc-row total-row">
+                        <span>Tổng tiền thanh toán:</span>
+                        <span class="final-price">2.400.000đ</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit-order">Xác Nhận Đặt Thuê & Thanh Toán</button>
+                <p class="security-text">🔒 Cam kết thiết bị chính hãng - Bảo mật thông tin đặt thuê tuyệt đối.</p>
+            </div>
+
+        </div>
+    </main>
+    <footer class="main-footer">
+        <div class="footer-container">
+            
+            <div class="footer-column brand-info">
+                <h3>MID<span>CAMERA</span></h3>
+                <p>Hệ thống cho thuê máy ảnh, ống kính và thiết bị ngành ảnh cao cấp. Mang đến giải pháp tối ưu cho các nhiếp ảnh gia và studio chuyên nghiệp.</p>
+                
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/1AJJ4h3nU8/?mibextid=wwXIfr" target="_blank" title="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    
+                    <a href="https://www.instagram.com/midcamera_/?utm_source=ig_web_button_share_sheet" target="_blank" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    
+                    <a href="https://www.tiktok.com/@mid_camera37?is_from_webapp=1&sender_device=pc" target="_blank" title="Tiktok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>Thiết Bị Cho Thuê</h4>
+                <ul>
+                    <li><a href="#">Máy ảnh Mirrorless / DSLR</a></li>
+                    <li><a href="#">Ống kính Cinema & Art</a></li>
+                    <li><a href="#">Thiết bị ánh sáng Studio</a></li>
+                    <li><a href="#">Gimbal & Phụ kiện quay phim</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Chính Sách & Hỗ Trợ</h4>
+                <ul>
+                    <li><a href="#">Thủ tục & Đặt cọc thuê máy</a></li>
+                    <li><a href="#">Chính sách bảo mật thông tin</a></li>
+                    <li><a href="#">Điều khoản sử dụng dịch vụ</a></li>
+                    <li><a href="#">Trung tâm trợ giúp (FAQs)</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column contact-info">
+                <h4>Liên Hệ Với Chúng Tôi</h4>
+                <p><i class="fa-solid fa-location-dot"></i> 45 Bạch Liêu, Thành Phố Vinh, Nghệ An</p>
+                <p><i class="fa-solid fa-phone"></i> Hotline: 0987.654.321</p>
+                <p><i class="fa-solid fa-envelope"></i> Email: Midcamera37@gmail.com</p>
+                <p><i class="fa-solid fa-clock"></i> Giờ làm việc: 08:00 - 21:00</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p>&copy; 2026 MidCamera. All rights reserved. Thiết kế bởi Nhóm MidCamera.</p>
+            </div>
+        </div>
+    </footer>
+
+    </body>
+</html>
